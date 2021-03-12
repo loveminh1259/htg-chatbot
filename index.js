@@ -84,7 +84,7 @@ server.on('upgrade', (req, socket, head) => {
         await myBot.run(context);
     });
 });
-server.get('/api/notify', async (req, res) => {
+server.post('/api/notify', async (req, res) => {
     for (const conversationReference of Object.values(conversationReferences)) {
         await adapter.continueConversation(conversationReference, async turnContext => {
             await turnContext.sendActivity('It time to inform your task, please complete it before 9:00AM. If you not, Mr Quan will beat your ass');
@@ -100,6 +100,6 @@ server.get('/api/notify', async (req, res) => {
 setInterval(function() {
     const date = new Date();
     if (date.getHours() === 8 && date.getMinutes() === 45) {
-        axios.get('http://localhost:8080/api/notify');
+        axios.post('http://localhost:8080/api/notify');
     }
 }, 60000);
