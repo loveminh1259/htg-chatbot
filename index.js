@@ -1,6 +1,6 @@
 // Copyright (c) Microsoft Corporation. All rights reserved.
 // Licensed under the MIT License.
-
+// const moment = require('moment')
 const path = require('path');
 const axios = require('axios');
 axios.default.baseUrl = 'http://localhost:8080';
@@ -8,6 +8,8 @@ const dotenv = require('dotenv');
 // Import required bot configuration.
 const ENV_FILE = path.join(__dirname, '.env');
 dotenv.config({ path: ENV_FILE });
+
+const moment = require('moment');
 
 const restify = require('restify');
 
@@ -98,8 +100,9 @@ server.post('/api/notify', async (req, res) => {
 });
 
 setInterval(function() {
-    const date = new Date();
-    if (date.getHours() === 8 && date.getMinutes() === 45) {
-        axios.post('http://localhost:8080/api/notify');
+    moment.tz.setDefault('Asia/Ho_Chi_Minh');
+    const date = moment();
+    if (date.hours() === 9 && date.minutes() === 33) {
+        axios.post('https://htg-chatbot.herokuapp.com/api/notify');
     }
-}, 60000);
+}, 2000);
