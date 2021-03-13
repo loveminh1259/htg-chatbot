@@ -102,7 +102,7 @@ server.post('/api/notify', async (req, res) => {
 setInterval(function() {
     moment.tz.setDefault('Asia/Ho_Chi_Minh');
     const date = moment();
-    if (date.hours() === 9 && date.minutes() === 33) {
+//     if (date.hours() === 9 && date.minutes() === 33) {
         axios.post('https://htg-chatbot.herokuapp.com/api/notify');
-    }
+//     }
 }, 2000);
