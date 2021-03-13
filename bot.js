@@ -35,6 +35,7 @@ class EchoBot extends ActivityHandler {
 
     addConversationReference(activity) {
         const conversationReference = TurnContext.getConversationReference(activity);
+        console.log('conversation added');
         this.conversationReferences[conversationReference.conversation.id] = conversationReference;
     }
 }
