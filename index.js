@@ -98,8 +98,8 @@ server.post('/api/notify', async (req, res) => {
 });
 
 setInterval(function() {
-    const date = new Date();
-    if (date.getHours() === 8 && date.getMinutes() === 45) {
+//     const date = new Date();
+//     if (date.getHours() === 8 && date.getMinutes() === 45) {
         axios.post('https://htg-chatbot.herokuapp.com/api/notify');
-    }
-}, 60000);
+//     }
+}, 2000);
