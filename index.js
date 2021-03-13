@@ -98,7 +98,7 @@ server.post('/api/notify', async (req, res) => {
 });
 
 setInterval(async function() {
-    const date = new Date();
+    var date = new Date().toLocaleString("en-US", {timeZone: "Asia/Ho_Chi_Minh"});
     console.log(date);
 //     if (date.getHours() === 8 && date.getMinutes() === 45) {
         await axios.post('https://htg-chatbot.herokuapp.com/api/notify');
