@@ -99,10 +99,19 @@ server.post('/api/notify', async (req, res) => {
     res.end();
 });
 
+server.get('/api/remandServer', async (req, res) => {
+    res.setHeader('Content-Type', 'text/html');
+    res.writeHead(200);
+    res.write('<html><body><h1>Remanding server request is sent</h1></body></html>');
+    res.end();
+});
+
 setInterval(function() {
     moment.tz.setDefault('Asia/Ho_Chi_Minh');
     const date = moment();
     if (date.hours() === 8 && date.minutes() === 55) {
         axios.post('https://htg-chatbot.herokuapp.com/api/notify');
+    } else {
+        axios.post('https://htg-chatbot.herokuapp.com/api/remandServer');
     }
-}, 2000);
+}, 60000);
