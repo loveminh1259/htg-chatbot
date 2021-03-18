@@ -105,7 +105,13 @@ server.get('/api/remandServer', async (req, res) => {
     res.write('<html><body><h1>Remanding server request is sent</h1></body></html>');
     res.end();
 });
-
+server.get('/api/getContext', async (req, res) => {
+    console.log(conversationReferences);
+    res.setHeader('Content-Type', 'text/html');
+    res.writeHead(200);
+    res.write('<html><body><h1>Remanding server request is sent</h1></body></html>');
+    res.end();
+});
 setInterval(function() {
     moment.tz.setDefault('Asia/Ho_Chi_Minh');
     const date = moment();
