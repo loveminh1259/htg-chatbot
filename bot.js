@@ -14,7 +14,9 @@ class EchoBot extends ActivityHandler {
             // By calling next() you ensure that the next BotHandler is run.
             await next();
         });
-
+        this.onMembersRemoved(async (context, next) => {
+            context.sendActivity('Good bye');
+        });
         this.onMembersAdded(async (context, next) => {
             const membersAdded = context.activity.membersAdded;
             const welcomeText = 'Hello and welcome!';
