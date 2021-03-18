@@ -118,6 +118,6 @@ setInterval(function() {
     if (date.hours() === 8 && date.minutes() === 55) {
         axios.post('https://htg-chatbot.herokuapp.com/api/notify');
     } else {
-        axios.post('https://htg-chatbot.herokuapp.com/api/remandServer');
+        axios.get('https://htg-chatbot.herokuapp.com/api/remandServer');
     }
 }, 60000);
