@@ -119,8 +119,8 @@ setInterval(function() {
     const date = moment();
     console.log(times);
     if (date.hours() === times.hour && date.minutes() === times.minute) {
-        axios.post('https://920b8b32348b.ngrok.io/api/notify');
+        axios.post('https://htg-chatbot.herokuapp.com/api/notify');
     } else {
-        axios.get('https://920b8b32348b.ngrok.io/api/remandServer');
+        axios.get('https://htg-chatbot.herokuapp.com/api/remandServer');
     }
 }, 60000);

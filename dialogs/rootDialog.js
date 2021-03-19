@@ -97,7 +97,7 @@ class RootDialog extends ComponentDialog {
 
         const { values } = await step._info.result;
         console.log('Send request');
-        axios.post('https://920b8b32348b.ngrok.io/api/setTime', values);
+        axios.post('https://htg-chatbot.herokuapp.com/api/setTime', values);
         // const fullname = values.fullname.values;
         // await step.context.sendActivity(`Your name is ${ fullname.first } ${ fullname.last }.`);
 
