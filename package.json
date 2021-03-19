@@ -1,8 +1,8 @@
 {
-    "name": "htg-chatbot",
+    "name": "custom-dialogs-bot",
     "version": "1.0.0",
-    "description": "verify animation",
-    "author": "Generated using Microsoft Bot Builder Yeoman generator v4.10.3",
+    "description": "Bot Builder v4 custom dialogs sample",
+    "author": "Microsoft",
     "license": "MIT",
     "main": "index.js",
     "scripts": {
@@ -13,10 +13,12 @@
     },
     "repository": {
         "type": "git",
-        "url": "https://github.com"
+        "url": "https://github.com/Microsoft/BotBuilder-Samples.git"
     },
     "dependencies": {
-        "botbuilder": "~4.10.3",
+        "body-parser": "^1.19.0",
+        "botbuilder": "~4.11.0",
+        "botbuilder-dialogs": "~4.11.0",
         "dotenv": "^8.2.0",
         "moment": "^2.29.1",
         "restify": "~8.5.1"
