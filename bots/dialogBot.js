@@ -39,10 +39,16 @@ class DialogBot extends ActivityHandler {
             } else if (currentDialog.dialogStack && currentDialog.dialogStack.length > 0) {
                 await this.dialog.run(context, this.dialogState);
             } else {
-                this.dialog.run(context, this.dialogState);
+                if (inputText.toLowerCase() === 'set time notify') {
+                    await this.dialog.run(context, this.dialogState);
+                } else if (inputText.toLowerCase() === 'action') {
+                    const replyText = '1 - Set time notify (Set up time to remind daily scrum\n';
+                    await context.sendActivity(MessageFactory.text(replyText, replyText));
+                } else {
+                    await context.sendActivity(MessageFactory.text('There is not action can activate from your message!'));
+                }
             }
             // Run the Dialog with the new message Activity.
-
             // By calling next() you ensure that the next BotHandler is run.
             await next();
         });
